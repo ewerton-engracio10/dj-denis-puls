@@ -1,0 +1,108 @@
+/* Correção definitiva da seção de atuação/serviços */
+.services,
+.serviceGrid,
+.serviceCard,
+.serviceImage {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.serviceGrid {
+  width: 100%;
+  align-items: start;
+  overflow: hidden;
+}
+
+.serviceCard {
+  width: 100%;
+}
+
+.serviceImage {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* O asset de 15 anos traz informação visual muito próxima da borda.
+   Este reenquadramento remove qualquer resíduo lateral sem alterar o card. */
+.serviceCard:nth-child(4) .serviceImage {
+  background-size: 118% auto;
+  background-position: center 45% !important;
+}
+
+/* Pré-wedding recebe uma imagem própria e limpa, sem repetir Casamentos. */
+.serviceCard:nth-child(5) .serviceImage {
+  background-image: url("/assets/gallery.webp") !important;
+  background-position: center 52% !important;
+}
+
+@media (max-width: 680px) {
+  .services {
+    display: block;
+    width: min(92vw, 540px);
+    overflow: hidden;
+  }
+
+  .servicesIntro {
+    margin-bottom: 26px;
+  }
+
+  .serviceGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 14px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .serviceCard {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .serviceImage {
+    width: 100%;
+    height: 185px;
+    border-radius: 12px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .serviceCard h3,
+  .serviceCard p {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  /* O quinto item ocupa a largura completa: não sobra card órfão nem espaço vazio. */
+  .serviceCard:nth-child(5) {
+    grid-column: 1 / -1;
+  }
+
+  .serviceCard:nth-child(5) .serviceImage {
+    height: 230px;
+    background-size: cover;
+    background-position: center 50% !important;
+  }
+
+  .serviceCard:nth-child(4) .serviceImage {
+    background-size: 125% auto;
+    background-position: center 45% !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .serviceGrid {
+    gap: 22px 12px;
+  }
+
+  .serviceImage {
+    height: 176px;
+  }
+
+  .serviceCard:nth-child(5) .serviceImage {
+    height: 215px;
+  }
+}

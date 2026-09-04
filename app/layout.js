@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./services-layout.css";
 
 export const metadata = {
   title: "DJ Denis Puls | Wedding DJ | Graduation DJ",
