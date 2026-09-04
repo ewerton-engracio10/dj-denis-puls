@@ -3,9 +3,9 @@ const A = {
   about: "/assets/about.webp",
   "service-wedding": "/assets/service-wedding.webp",
   "service-graduation": "/assets/service-graduation.webp",
-  "service-corporate": "/assets/service-corporate.webp",
+  "service-corporate": "/assets/hero.webp",
   "service-15anos": "/assets/service-15anos.webp",
-  "service-prewedding": "/assets/service-prewedding.webp",
+  "service-prewedding": "/assets/service-wedding.webp",
   gallery: "/assets/gallery.webp",
   logo: "/assets/logo.webp",
 };
@@ -13,20 +13,20 @@ const A = {
 const InstagramIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" className="dot"/></svg>
 );
-const WhatsIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.3 8.3 0 0 1-12.3 7.2L4 20l1.1-4A8.3 8.3 0 1 1 20.5 11.7Z"/><path d="M9.2 8.2c.2-.5.5-.5.8-.5h.6c.2 0 .4 0 .6.5l.8 1.8c.1.3.1.5-.1.7l-.7.9c-.2.2-.2.4 0 .7.5.8 1.2 1.5 2 2 .3.2.5.2.7 0l.9-1.1c.2-.2.4-.3.7-.2l1.9.9c.3.1.5.3.5.6 0 .5-.2 1.4-.7 1.9-.5.5-1.3.8-2.2.8-1.5 0-3.5-.8-5.4-2.6-1.8-1.7-2.9-3.8-3-5.4 0-.7.2-1.4.6-1.9Z" className="fill"/></svg>
+const LinkIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a4 4 0 0 0 5.7 0l2.3-2.3a4 4 0 0 0-5.7-5.7L11 6.3"/><path d="M14 11a4 4 0 0 0-5.7 0L6 13.3A4 4 0 0 0 11.7 19l1.3-1.3"/></svg>
 );
-const MailIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+const ReelsIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m8 3 4 5M14 3l4 5M3 8h18"/><path d="m10 12 5 3-5 3v-6Z"/></svg>
 );
 const PlayIcon = () => <span className="playTriangle">▶</span>;
 
 const services = [
-  ["service-wedding", "♡", "CASAMENTOS", "Do cerimonial à pista, cada momento pensado para emocionar."],
-  ["service-graduation", "◇", "FORMATURAS", "A trilha sonora que marca o fim de um ciclo e o início de novas histórias."],
-  ["service-corporate", "▣", "CORPORATIVOS", "Eventos empresariais com profissionalismo, elegância e energia na medida certa."],
-  ["service-15anos", "15", "15 ANOS & FESTAS", "Diversão, emoção e muita música para celebrar do seu jeito."],
-  ["service-prewedding", "✧", "PRÉ-WEDDING", "Ambiente leve e vibrante para comemorar antes do grande dia."],
+  ["service-wedding", "♡", "CASAMENTOS", "Do cerimonial à pista, cada momento pensado para emocionar.", "center 42%"],
+  ["service-graduation", "◇", "FORMATURAS", "A trilha sonora que marca o fim de um ciclo e o início de novas histórias.", "center 48%"],
+  ["service-corporate", "▣", "CORPORATIVOS", "Eventos empresariais com profissionalismo, elegância e energia na medida certa.", "center 40%"],
+  ["service-15anos", "15", "15 ANOS & FESTAS", "Diversão, emoção e muita música para celebrar do seu jeito.", "center 45%"],
+  ["service-prewedding", "✧", "PRÉ-WEDDING", "Ambiente leve e vibrante para comemorar antes do grande dia.", "center 58%"],
 ];
 
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
       <section className="hero" id="inicio">
         <header className="topbar shell">
           <a className="brand" href="#inicio" aria-label="DJ Denis Puls"><img src={A.logo} alt="Denis Puls" /></a>
-          <nav>
+          <nav aria-label="Navegação principal">
             <a className="active" href="#inicio">INÍCIO</a>
             <a href="#sobre">SOBRE</a>
             <a href="#servicos">SERVIÇOS</a>
@@ -47,29 +47,29 @@ export default function Home() {
           <a className="btn primary small" href="https://linktr.ee/djdenispuls" target="_blank" rel="noreferrer">FAZER ORÇAMENTO <span>›</span></a>
         </header>
 
-        <div className="heroArt" style={{backgroundImage:`url(${A.hero})`}} />
+        <div className="heroArt" style={{backgroundImage:`url(${A.hero})`}} role="img" aria-label="DJ Denis Puls em apresentação" />
         <div className="shell heroContent">
           <div className="eyebrow">DJ DENIS PULS</div>
           <h1>MÚSICA QUE<br/><span>TRANSFORMA</span><br/>MOMENTOS.</h1>
           <p>Casamentos, formaturas, festas e eventos corporativos<br className="desktopOnly"/> com a energia certa para criar histórias inesquecíveis.</p>
           <div className="heroActions">
             <a className="btn primary" href="https://linktr.ee/djdenispuls" target="_blank" rel="noreferrer">FAZER ORÇAMENTO <span>›</span></a>
-            <a className="btn ghost" href="#galeria"><PlayIcon/> ASSISTIR VÍDEO</a>
+            <a className="btn ghost" href="https://www.instagram.com/djdenispuls/reels/" target="_blank" rel="noreferrer"><PlayIcon/> ASSISTIR VÍDEO</a>
           </div>
         </div>
         <div className="neonLine"/>
       </section>
 
       <section className="about shell" id="sobre">
-        <div className="aboutPhoto" style={{backgroundImage:`url(${A.about})`}} />
+        <div className="aboutPhoto" style={{backgroundImage:`url(${A.about})`}} role="img" aria-label="DJ Denis Puls tocando em evento" />
         <div className="aboutCopy">
           <div className="eyebrow">SOBRE</div>
           <h2>MAIS DE 17 ANOS<br/><span>CRIANDO EXPERIÊNCIAS</span><br/>ÚNICAS.</h2>
           <p>Com um repertório eclético e atualizado, meu objetivo é sentir o público e entregar a trilha sonora perfeita para cada momento. Do clássico ao eletrônico, do romance à pista cheia.</p>
           <div className="stats">
-            <div><b>🏆</b><strong>2x PRÊMIO</strong><small>Melhor DJ de Casamento<br/>Zankyou Brasil</small></div>
-            <div><b>🎧</b><strong>+17 ANOS</strong><small>De experiência em<br/>eventos</small></div>
-            <div><b>●●●</b><strong>EVENTOS</strong><small>Casamentos, formaturas,<br/>corporativos e festas</small></div>
+            <div><b className="statIcon statTrophy" aria-hidden="true"/><strong>2x PRÊMIO</strong><small>Melhor DJ de Casamento<br/>Zankyou Brasil</small></div>
+            <div><b className="statIcon statHeadphones" aria-hidden="true"/><strong>+17 ANOS</strong><small>De experiência em<br/>eventos</small></div>
+            <div><b className="statIcon statEvents" aria-hidden="true"/><strong>EVENTOS</strong><small>Casamentos, formaturas,<br/>corporativos e festas</small></div>
           </div>
         </div>
       </section>
@@ -80,20 +80,20 @@ export default function Home() {
           <h2>O SOM CERTO PARA<br/><span>CADA CELEBRAÇÃO</span></h2>
         </div>
         <div className="serviceGrid" id="eventos">
-          {services.map(([img,icon,title,text]) => (
+          {services.map(([img,icon,title,text,position]) => (
             <article className="serviceCard" key={title}>
-              <div className="serviceImage" style={{backgroundImage:`url(${A[img]})`}}><span>{icon}</span></div>
+              <div className="serviceImage" style={{backgroundImage:`url(${A[img]})`, backgroundPosition:position}} role="img" aria-label={`${title} com DJ Denis Puls`}><span aria-hidden="true">{icon}</span></div>
               <h3>{title}</h3><p>{text}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="benefits shell">
-        <div><span className="benefitIcon">▥</span><strong>REPERTÓRIO<br/>PERSONALIZADO</strong><small>Música do seu estilo,<br/>do seu jeito.</small></div>
-        <div><span className="benefitIcon">◖◗</span><strong>EQUIPAMENTOS<br/>PROFISSIONAIS</strong><small>Som e iluminação de alta<br/>qualidade.</small></div>
-        <div><span className="benefitIcon">▣</span><strong>PLANEJAMENTO<br/>COMPLETO</strong><small>Do briefing à execução,<br/>tudo alinhado.</small></div>
-        <div><span className="benefitIcon">ϟ</span><strong>ENERGIA QUE<br/>CONTAGIA</strong><small>Pista cheia do início<br/>ao fim da festa.</small></div>
+      <section className="benefits shell" aria-label="Diferenciais">
+        <div><span className="benefitIcon benefitMusic" aria-hidden="true"/><strong>REPERTÓRIO<br/>PERSONALIZADO</strong><small>Música do seu estilo,<br/>do seu jeito.</small></div>
+        <div><span className="benefitIcon benefitAudio" aria-hidden="true"/><strong>EQUIPAMENTOS<br/>PROFISSIONAIS</strong><small>Som e iluminação de alta<br/>qualidade.</small></div>
+        <div><span className="benefitIcon benefitPlan" aria-hidden="true"/><strong>PLANEJAMENTO<br/>COMPLETO</strong><small>Do briefing à execução,<br/>tudo alinhado.</small></div>
+        <div><span className="benefitIcon benefitEnergy" aria-hidden="true"/><strong>ENERGIA QUE<br/>CONTAGIA</strong><small>Pista cheia do início<br/>ao fim da festa.</small></div>
       </section>
 
       <section className="feedback shell" id="feedbacks">
@@ -102,27 +102,27 @@ export default function Home() {
           <h2>O QUE DIZEM SOBRE<br/><span>A PISTA DO DENIS</span></h2>
         </div>
         <div className="testimonials">
-          <blockquote><b>“</b><p>Queria te agradecer pelo ótimo trabalho que tu prestou no nosso casamento. Foi mais que perfeito!</p><footer>Cliente de casamento</footer></blockquote>
-          <blockquote><b>“</b><p>Denis Puls estava sensacional, muito obrigada!</p><footer>Feedback de evento</footer></blockquote>
+          <blockquote><b>“</b><p>Queria te agradecer pelo ótimo trabalho que tu prestou no nosso casamento. Foi mais que perfeito!</p><footer>Casamento</footer></blockquote>
+          <blockquote><b>“</b><p>Denis Puls estava sensacional, muito obrigada!</p><footer>Ana Maria</footer></blockquote>
           <blockquote><b>“</b><p>A energia incrível! A pista nunca ficou vazia.</p><footer>Feedback de convidado</footer></blockquote>
         </div>
       </section>
 
-      <section className="gallery" id="galeria" style={{backgroundImage:`linear-gradient(90deg,rgba(5,5,5,.32),rgba(5,5,5,.05)),url(${A.gallery})`}}>
+      <section className="gallery" id="galeria" style={{backgroundImage:`linear-gradient(90deg,rgba(5,5,5,.32),rgba(5,5,5,.05)),url(${A.gallery})`}} role="img" aria-label="Pista de evento com DJ Denis Puls">
         <div className="shell galleryCopy"><h2>MOMENTOS REAIS,<br/><span>EMOÇÕES VERDADEIRAS.</span></h2><a className="btn ghost" href="https://www.instagram.com/djdenispuls/" target="_blank" rel="noreferrer">▦ &nbsp; VER GALERIA COMPLETA</a></div>
       </section>
 
       <section className="cta shell" id="contato">
         <h2>VAMOS FAZER SUA<br/><span>HISTÓRIA INESQUECÍVEL?</span></h2>
-        <div className="ctaRight"><p>Entre em contato e receba uma proposta personalizada<br/>para o seu evento.</p><div className="ctaActions"><a className="btn primary" href="https://linktr.ee/djdenispuls" target="_blank" rel="noreferrer">FAZER ORÇAMENTO <span>›</span></a><a className="iconBtn" href="https://www.instagram.com/djdenispuls/" target="_blank" rel="noreferrer"><InstagramIcon/></a><a className="iconBtn" href="https://linktr.ee/djdenispuls" target="_blank" rel="noreferrer"><WhatsIcon/></a><a className="iconBtn" href="https://linktr.ee/djdenispuls" target="_blank" rel="noreferrer"><MailIcon/></a></div></div>
+        <div className="ctaRight"><p>Entre em contato e receba uma proposta personalizada<br/>para o seu evento.</p><div className="ctaActions"><a className="btn primary" href="https://linktr.ee/djdenispuls" target="_blank" rel="noreferrer">FAZER ORÇAMENTO <span>›</span></a><a className="iconBtn" aria-label="Instagram do DJ Denis Puls" href="https://www.instagram.com/djdenispuls/" target="_blank" rel="noreferrer"><InstagramIcon/></a><a className="iconBtn" aria-label="Linktree do DJ Denis Puls" href="https://linktr.ee/djdenispuls" target="_blank" rel="noreferrer"><LinkIcon/></a><a className="iconBtn" aria-label="Reels do DJ Denis Puls" href="https://www.instagram.com/djdenispuls/reels/" target="_blank" rel="noreferrer"><ReelsIcon/></a></div></div>
       </section>
 
       <footer className="footer shell">
         <div className="footerBrand"><img src={A.logo} alt="Denis Puls"/><p>Mais de 17 anos transformando eventos<br/>em experiências únicas através da música.</p></div>
         <div><h4>NAVEGAÇÃO</h4><a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#eventos">Eventos</a><a href="#feedbacks">Feedbacks</a><a href="#galeria">Galeria</a><a href="#contato">Contato</a></div>
         <div><h4>SERVIÇOS</h4><span>Casamentos</span><span>Formaturas</span><span>Corporativos</span><span>15 Anos & Festas</span><span>Pré-Wedding</span></div>
-        <div><h4>CONTATO</h4><a href="https://linktr.ee/djdenispuls" target="_blank" rel="noreferrer">Link de contato oficial</a><span>Porto Alegre/RS e região</span></div>
-        <div><h4>SIGA-ME</h4><div className="socials"><a className="round" href="https://www.instagram.com/djdenispuls/" target="_blank" rel="noreferrer"><InstagramIcon/></a><a className="round" href="https://linktr.ee/djdenispuls" target="_blank" rel="noreferrer">f</a><a className="round" href="https://linktr.ee/djdenispuls" target="_blank" rel="noreferrer">𝕏</a></div></div>
+        <div><h4>CONTATO</h4><a href="https://linktr.ee/djdenispuls" target="_blank" rel="noreferrer">Linktree oficial</a><span>Porto Alegre/RS e região</span></div>
+        <div><h4>SIGA-ME</h4><div className="socials"><a className="round" aria-label="Instagram do DJ Denis Puls" href="https://www.instagram.com/djdenispuls/" target="_blank" rel="noreferrer"><InstagramIcon/></a><a className="round" aria-label="Linktree do DJ Denis Puls" href="https://linktr.ee/djdenispuls" target="_blank" rel="noreferrer"><LinkIcon/></a><a className="round" aria-label="Reels do DJ Denis Puls" href="https://www.instagram.com/djdenispuls/reels/" target="_blank" rel="noreferrer"><ReelsIcon/></a></div></div>
       </footer>
       <div className="copyright">© 2026 Denis Puls DJ. Todos os direitos reservados.</div>
     </main>
