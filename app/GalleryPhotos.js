@@ -8,7 +8,7 @@ import galleryPart07 from "./gallery-data/part07";
 import galleryPart08 from "./gallery-data/part08";
 import galleryPart09 from "./gallery-data/part09";
 
-const gallerySprite = `data:image/webp;base64,${galleryPart01}${galleryPart02}${galleryPart03}${galleryPart04}${galleryPart05}${galleryPart06}${galleryPart07}${galleryPart08}${galleryPart09}`;
+export const gallerySprite = `data:image/webp;base64,${galleryPart01}${galleryPart02}${galleryPart03}${galleryPart04}${galleryPart05}${galleryPart06}${galleryPart07}${galleryPart08}${galleryPart09}`;
 
 const galleryPhotos = Array.from({ length: 10 }, (_, index) => ({
   x: `${(index % 5) * 25}%`,
