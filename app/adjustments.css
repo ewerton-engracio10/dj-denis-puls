@@ -29,22 +29,16 @@
   mask-mode: luminance;
 }
 
-/* 2. Linha/efeito verde contínuo em toda a base do hero. */
+/* 2. Linha/efeito verde uniforme em toda a base do hero. */
 .neonLine {
   left: 0;
   right: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    rgba(200, 240, 0, .78) 0%,
-    var(--accent) 12%,
-    var(--accent) 88%,
-    rgba(200, 240, 0, .78) 100%
-  );
+  background: var(--accent);
   box-shadow:
-    0 0 13px rgba(200, 240, 0, .95),
-    0 -8px 22px rgba(200, 240, 0, .24);
+    0 0 12px rgba(200, 240, 0, .9),
+    0 -6px 18px rgba(200, 240, 0, .22);
 }
 
 @media (max-width: 680px) {
