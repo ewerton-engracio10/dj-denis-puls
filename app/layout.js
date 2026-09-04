@@ -1,6 +1,7 @@
 import "./globals.css";
 import "./services-layout.css";
 import "./header-mobile.css";
+import HeaderMobileEnhancer from "./HeaderMobileEnhancer";
 
 export const metadata = {
   title: "DJ Denis Puls | Wedding DJ | Graduation DJ",
@@ -10,7 +11,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        {children}
+        <HeaderMobileEnhancer />
+      </body>
     </html>
   );
 }
