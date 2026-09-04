@@ -1,45 +1,12 @@
-CORREÇÃO FINAL DA GALERIA — DJ DENIS PULS
+DJ DENIS PULS — GALERIA FINAL AJUSTADA
 
-ESTRUTURA DESTE PACOTE
+1. Extraia este ZIP.
+2. Copie as pastas app e public para a raiz do repositório dj-denis-puls.
+3. Quando o Windows perguntar, confirme a substituição dos arquivos existentes.
+4. No GitHub Desktop, confira as alterações, faça Commit e depois Push origin.
 
-app/GalleryPhotos.js
-public/gallery/gallery-01.jpg
-public/gallery/gallery-02.jpg
-public/gallery/gallery-03.jpg
-public/gallery/gallery-04.jpg
-public/gallery/gallery-05.jpg
-public/gallery/gallery-06.jpg
-public/gallery/gallery-07.jpg
-public/gallery/gallery-08.jpg
-public/gallery/gallery-09.jpg
-public/gallery/gallery-10.jpg
+O pacote contém:
+- app/GalleryPhotos.js
+- public/gallery/gallery-01.jpg até gallery-10.jpg
 
-COMO SUBSTITUIR PELO GITHUB DESKTOP
-
-1. Abra a pasta local do repositório dj-denis-puls.
-2. Copie a pasta "app" deste pacote para a raiz do projeto.
-   - Confirme a substituição de app/GalleryPhotos.js.
-   - Não apague os outros arquivos da pasta app.
-3. Copie a pasta "public" deste pacote para a raiz do projeto.
-   - Isso criará/atualizará public/gallery/ com as 10 fotos.
-   - Não apague os outros arquivos da pasta public.
-4. No GitHub Desktop, confira os arquivos alterados/adicionados.
-5. Commit sugerido:
-   Corrige definitivamente galeria com 10 fotos reais do Denis
-6. Push origin.
-7. Aguarde o deploy automático da Vercel.
-
-O QUE FOI CORRIGIDO
-
-- 10 de 10 espaços preenchidos.
-- Nenhuma foto repetida dentro da galeria.
-- Nenhum DJ genérico.
-- Nenhuma imagem com letras em outro idioma.
-- Nenhum placeholder vazio.
-- Fotos padronizadas em 1200x900 (4:3).
-- O componente usa arquivos locais, sem depender de links externos.
-- A exportação gallerySprite foi preservada para não quebrar a seção Atuação atual.
-
-IMPORTANTE
-
-Este pacote foi feito para corrigir SOMENTE a galeria sem interferir nas outras alterações já aprovadas do site.
+As imagens foram reenquadradas para evitar corte da cabeça e manter padrão visual uniforme.
