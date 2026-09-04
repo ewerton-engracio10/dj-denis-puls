@@ -1,3 +1,5 @@
+import GalleryPhotos from "./GalleryPhotos";
+
 const A = {
   hero: "/assets/hero.webp",
   about: "/assets/about.webp",
@@ -31,8 +33,6 @@ const services = [
   ["service-15anos", "15", "15 ANOS & FESTAS", "Diversão, emoção e muita música para celebrar do seu jeito.", "center 45%"],
   ["service-prewedding", "✧", "PRÉ-WEDDING", "Ambiente leve e vibrante para comemorar antes do grande dia.", "center 58%"],
 ];
-
-const gallerySlots = Array.from({ length: 10 }, (_, index) => index + 1);
 
 export default function Home() {
   return (
@@ -126,16 +126,9 @@ export default function Home() {
             <div className="eyebrow">GALERIA</div>
             <h2>REGISTROS DE<br/><span>MOMENTOS REAIS.</span></h2>
           </div>
-          <p>Espaços preparados para receber as fotos selecionadas do Instagram do Denis.</p>
+          <p>Uma seleção de momentos, festas e experiências vividas na pista.</p>
         </div>
-        <div className="photoGrid">
-          {gallerySlots.map((number) => (
-            <div className="photoSlot" key={number} aria-label={`Espaço para foto ${number}`}>
-              <GalleryIcon/>
-              <span>FOTO {String(number).padStart(2,"0")}</span>
-            </div>
-          ))}
-        </div>
+        <GalleryPhotos />
       </section>
 
       <section className="cta shell" id="contato">
