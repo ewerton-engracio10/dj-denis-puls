@@ -1,27 +1,34 @@
-.topbar{gap:18px}
-.topbar .brand{order:1}
-.topbar nav{order:2}
-.topbar::after{content:"Agenciado Moving Eventos";order:3;white-space:nowrap;color:#f4f4f0;font-size:9px;font-weight:800;letter-spacing:.02em;opacity:.88}
-.topbar .btn.primary.small{order:4;margin-left:0!important;width:46px;min-width:46px;height:46px;padding:0;border-radius:50%;border:1px solid #25D366;background-color:rgba(0,0,0,.42);background-image:url("/icons/whatsapp.svg");background-repeat:no-repeat;background-position:center;background-size:25px 25px;box-shadow:0 0 14px rgba(37,211,102,.18);font-size:0;color:transparent}
-.topbar .btn.primary.small span{display:none}
+@media(min-width:981px){
+  .topbar{gap:18px}
+  .topbar .brand{order:1;width:145px;height:68px;flex:0 0 145px;align-self:center}
+  .topbar .brand::before{inset:0 0 14px 0}
+  .topbar .brand::after{content:"Agenciado Moving Eventos";position:absolute;left:0;right:0;bottom:0;text-align:center;white-space:nowrap;color:#b7bab6;font-size:7.5px;font-weight:700;letter-spacing:.02em;line-height:1}
+  .topbar nav{order:2;margin-left:auto}
+  .topbar::after{content:none}
+  .topbar .btn.primary.small{order:3;margin-left:0!important;width:44px;min-width:44px;height:44px;padding:0;border:0;border-radius:0;background-color:transparent;background-image:url("/assets/whatsapp-real.webp");background-repeat:no-repeat;background-position:center;background-size:contain;box-shadow:none;font-size:0;color:transparent}
+  .topbar .btn.primary.small span{display:none}
+}
 
 @media(max-width:1180px) and (min-width:981px){
   .topbar{gap:14px}
   .topbar nav{gap:18px;font-size:11px}
-  .topbar::after{font-size:8px}
+  .topbar .brand{width:140px;flex-basis:140px}
+  .topbar .brand::after{font-size:7px}
 }
 
 @media(max-width:980px){
   .topbar{gap:12px}
-  .topbar::after{order:2;flex:1;min-width:0;text-align:center;font-size:10px}
-  .topbar .btn.primary.small{order:3}
+  .topbar .brand{order:1}
+  .topbar::after{content:"Agenciado Moving Eventos";order:2;flex:1;min-width:0;text-align:center;white-space:nowrap;color:#f4f4f0;font-size:10px;font-weight:800;letter-spacing:.02em;opacity:.9}
+  .topbar .btn.primary.small{order:3;margin-left:0!important;width:46px;min-width:46px;height:46px;padding:0;border:0;border-radius:0;background-color:transparent;background-image:url("/assets/whatsapp-real.webp");background-repeat:no-repeat;background-position:center;background-size:contain;box-shadow:none;font-size:0;color:transparent}
+  .topbar .btn.primary.small span{display:none}
 }
 
 @media(max-width:680px){
   .topbar{gap:10px}
   .topbar .brand{width:104px;height:44px;flex-basis:104px}
   .topbar::after{font-size:9px;letter-spacing:.01em}
-  .topbar .btn.primary.small{width:44px;min-width:44px;height:44px;background-size:24px 24px}
+  .topbar .btn.primary.small{width:44px;min-width:44px;height:44px}
 }
 
 @media(max-width:390px){
