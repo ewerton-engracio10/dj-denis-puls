@@ -1,0 +1,281 @@
+/* Revisão final exclusiva da versão mobile. Desktop preservado. */
+@media (max-width: 680px) {
+  html,
+  body,
+  main {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .shell {
+    width: min(92vw, 540px);
+    max-width: calc(100vw - 24px);
+  }
+
+  .topbar,
+  .heroContent,
+  .about,
+  .services,
+  .benefits,
+  .feedback,
+  .photoGallery,
+  .cta,
+  .footer {
+    min-width: 0;
+  }
+
+  /* Cabeçalho: mantém logo à esquerda, agência central e WhatsApp à direita. */
+  .topbar {
+    width: min(92vw, 540px);
+  }
+
+  .topbar::after {
+    max-width: calc(100% - 178px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Hero: impede qualquer estouro dos dois botões em telas estreitas. */
+  .heroContent {
+    padding-bottom: 30px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 11.7vw, 42px);
+    max-width: 100%;
+  }
+
+  .heroContent > p {
+    max-width: 100%;
+  }
+
+  .heroActions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .heroActions .btn {
+    width: 100%;
+    min-width: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  /* Sobre: títulos e estatísticas nunca ultrapassam a largura disponível. */
+  .aboutCopy,
+  .stats,
+  .stats > div {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .about h2 {
+    font-size: clamp(30px, 9.7vw, 35px);
+    max-width: 100%;
+  }
+
+  .stats strong {
+    white-space: normal;
+  }
+
+  /* Atuação: usa no mobile as mesmas imagens já aprovadas no desktop. */
+  .services,
+  .serviceGrid,
+  .serviceCard,
+  .serviceImage {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .serviceGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: hidden;
+  }
+
+  .serviceCard {
+    overflow: hidden;
+  }
+
+  .serviceImage,
+  .serviceCard:nth-child(4) .serviceImage,
+  .serviceCard:nth-child(5) .serviceImage {
+    background-image: var(--desktop-service-sprite) !important;
+    background-size: 500% 200% !important;
+    background-position: var(--desktop-service-x) var(--desktop-service-y) !important;
+    background-repeat: no-repeat !important;
+    background-color: #0a0b0b;
+    overflow: hidden;
+  }
+
+  .serviceCard:nth-child(5) {
+    grid-column: 1 / -1;
+  }
+
+  .serviceCard h3,
+  .serviceCard p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  /* Diferenciais e feedbacks: elimina qualquer largura residual dos grids desktop. */
+  .benefits,
+  .benefits > div,
+  .feedback,
+  .testimonials,
+  .testimonials blockquote {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Banner da galeria: replica no mobile o fundo limpo aprovado no desktop. */
+  .gallery {
+    width: 100%;
+    background-image:
+      linear-gradient(90deg, rgba(5,5,5,.36), rgba(5,5,5,.08)),
+      url("https://images.unsplash.com/photo-1506485854521-3e13d857db0b?auto=format&fit=crop&w=1400&q=85") !important;
+    background-size: cover !important;
+    background-position: center 48% !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .galleryCopy,
+  .galleryOpenBtn {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Galeria: mantém 2 colunas e impede corte/vazamento entre fotos. */
+  .photoGrid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    overflow: hidden;
+  }
+
+  .photoSlot {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* CTA: botão principal acima e três botões iguais lado a lado. */
+  .cta,
+  .ctaRight,
+  .ctaActions {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .ctaActions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ctaActions > .btn.primary,
+  .ctaActions > .iconBtn {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Rodapé: protege textos e links contra estouro horizontal. */
+  .footer > div,
+  .footerBrand,
+  .socials {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .footer p,
+  .footer a,
+  .footer span {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 390px) {
+  .shell,
+  .topbar {
+    width: calc(100vw - 28px);
+    max-width: calc(100vw - 28px);
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .about h2 {
+    font-size: 30px;
+  }
+
+  .servicesIntro h2,
+  .feedback h2,
+  .photoGallery h2 {
+    font-size: 28px;
+  }
+
+  .gallery h2 {
+    font-size: 27px;
+  }
+
+  .cta h2 {
+    font-size: 26px;
+  }
+
+  .heroActions .btn {
+    font-size: 9px;
+    padding-left: 8px;
+    padding-right: 8px;
+    gap: 6px;
+  }
+
+  .ctaActions {
+    gap: 9px;
+  }
+
+  .footer {
+    column-gap: 18px;
+  }
+}
+
+@media (max-width: 350px) {
+  .topbar .brand {
+    width: 82px;
+    height: 40px;
+    flex-basis: 82px;
+  }
+
+  .topbar::after {
+    max-width: 100px;
+    font-size: 7.5px;
+    text-overflow: clip;
+  }
+
+  .topbar .btn.primary.small {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+  }
+
+  .heroActions {
+    gap: 7px;
+  }
+
+  .heroActions .btn {
+    font-size: 8.5px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .photoGrid {
+    gap: 8px;
+  }
+}
