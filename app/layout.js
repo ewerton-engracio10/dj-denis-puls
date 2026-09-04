@@ -1,6 +1,7 @@
 import "./globals.css";
 import "./services-layout.css";
 import "./header-mobile.css";
+import "./gallery-fix.css";
 import HeaderMobileEnhancer from "./HeaderMobileEnhancer";
 
 export const metadata = {
