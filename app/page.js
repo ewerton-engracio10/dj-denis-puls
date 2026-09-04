@@ -1,4 +1,4 @@
-import GalleryPhotos from "./GalleryPhotos";
+import GalleryPhotos, { gallerySprite } from "./GalleryPhotos";
 
 const A = {
   hero: "/assets/hero.webp",
@@ -26,12 +26,17 @@ const GalleryIcon = () => (
 );
 const PlayIcon = () => <span className="playTriangle">▶</span>;
 
+const cropFromGallery = (index) => ({
+  x: `${(index % 5) * 25}%`,
+  y: `${Math.floor(index / 5) * 100}%`,
+});
+
 const services = [
-  ["service-wedding", "♡", "CASAMENTOS", "Do cerimonial à pista, cada momento pensado para emocionar.", "center 42%"],
-  ["service-graduation", "◇", "FORMATURAS", "A trilha sonora que marca o fim de um ciclo e o início de novas histórias.", "center 48%"],
-  ["service-corporate", "▣", "CORPORATIVOS", "Eventos empresariais com profissionalismo, elegância e energia na medida certa.", "center 40%"],
-  ["service-15anos", "15", "15 ANOS & FESTAS", "Diversão, emoção e muita música para celebrar do seu jeito.", "center 45%"],
-  ["service-prewedding", "✧", "PRÉ-WEDDING", "Ambiente leve e vibrante para comemorar antes do grande dia.", "center 58%"],
+  ["service-wedding", "♡", "CASAMENTOS", "Do cerimonial à pista, cada momento pensado para emocionar.", "center 42%", 6],
+  ["service-graduation", "◇", "FORMATURAS", "A trilha sonora que marca o fim de um ciclo e o início de novas histórias.", "center 48%", 1],
+  ["service-corporate", "▣", "CORPORATIVOS", "Eventos empresariais com profissionalismo, elegância e energia na medida certa.", "center 40%", 9],
+  ["service-15anos", "15", "15 ANOS & FESTAS", "Diversão, emoção e muita música para celebrar do seu jeito.", "center 45%", 5],
+  ["service-prewedding", "✧", "PRÉ-WEDDING", "Ambiente leve e vibrante para comemorar antes do grande dia.", "center 58%", 3],
 ];
 
 export default function Home() {
@@ -84,13 +89,26 @@ export default function Home() {
           <div className="eyebrow">ATUAÇÃO</div>
           <h2>O SOM CERTO PARA<br/><span>CADA CELEBRAÇÃO</span></h2>
         </div>
-        <div className="serviceGrid" id="eventos">
-          {services.map(([img,icon,title,text,position]) => (
-            <article className="serviceCard" key={title}>
-              <div className="serviceImage" style={{backgroundImage:`url(${A[img]})`, backgroundPosition:position}} role="img" aria-label={`${title} com DJ Denis Puls`}><span aria-hidden="true">{icon}</span></div>
-              <h3>{title}</h3><p>{text}</p>
-            </article>
-          ))}
+        <div className="serviceGrid" id="eventos" style={{"--desktop-service-sprite":`url("${gallerySprite}")`}}>
+          {services.map(([img,icon,title,text,position,desktopPhoto]) => {
+            const crop = cropFromGallery(desktopPhoto);
+            return (
+              <article className="serviceCard" key={title}>
+                <div
+                  className="serviceImage"
+                  style={{
+                    backgroundImage:`url(${A[img]})`,
+                    backgroundPosition:position,
+                    "--desktop-service-x":crop.x,
+                    "--desktop-service-y":crop.y,
+                  }}
+                  role="img"
+                  aria-label={`${title} com DJ Denis Puls`}
+                ><span aria-hidden="true">{icon}</span></div>
+                <h3>{title}</h3><p>{text}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 
