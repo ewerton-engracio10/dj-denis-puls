@@ -19,6 +19,9 @@ const LinkIcon = () => (
 const ReelsIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m8 3 4 5M14 3l4 5M3 8h18"/><path d="m10 12 5 3-5 3v-6Z"/></svg>
 );
+const GalleryIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m5 17 4.5-4.5 3 3 2-2 4.5 3.5"/></svg>
+);
 const PlayIcon = () => <span className="playTriangle">▶</span>;
 
 const services = [
@@ -28,6 +31,8 @@ const services = [
   ["service-15anos", "15", "15 ANOS & FESTAS", "Diversão, emoção e muita música para celebrar do seu jeito.", "center 45%"],
   ["service-prewedding", "✧", "PRÉ-WEDDING", "Ambiente leve e vibrante para comemorar antes do grande dia.", "center 58%"],
 ];
+
+const gallerySlots = Array.from({ length: 10 }, (_, index) => index + 1);
 
 export default function Home() {
   return (
@@ -109,7 +114,28 @@ export default function Home() {
       </section>
 
       <section className="gallery" id="galeria" style={{backgroundImage:`linear-gradient(90deg,rgba(5,5,5,.32),rgba(5,5,5,.05)),url(${A.gallery})`}} role="img" aria-label="Pista de evento com DJ Denis Puls">
-        <div className="shell galleryCopy"><h2>MOMENTOS REAIS,<br/><span>EMOÇÕES VERDADEIRAS.</span></h2><a className="btn ghost" href="https://www.instagram.com/djdenispuls/" target="_blank" rel="noreferrer">▦ &nbsp; VER GALERIA COMPLETA</a></div>
+        <div className="shell galleryCopy">
+          <h2>MOMENTOS REAIS,<br/><span>EMOÇÕES VERDADEIRAS.</span></h2>
+          <a className="btn ghost galleryOpenBtn" href="#galeria-fotos"><GalleryIcon/> ABRIR GALERIA</a>
+        </div>
+      </section>
+
+      <section className="photoGallery shell" id="galeria-fotos" aria-label="Galeria de fotos do DJ Denis Puls">
+        <div className="photoGalleryHead">
+          <div>
+            <div className="eyebrow">GALERIA</div>
+            <h2>REGISTROS DE<br/><span>MOMENTOS REAIS.</span></h2>
+          </div>
+          <p>Espaços preparados para receber as fotos selecionadas do Instagram do Denis.</p>
+        </div>
+        <div className="photoGrid">
+          {gallerySlots.map((number) => (
+            <div className="photoSlot" key={number} aria-label={`Espaço para foto ${number}`}>
+              <GalleryIcon/>
+              <span>FOTO {String(number).padStart(2,"0")}</span>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="cta shell" id="contato">
