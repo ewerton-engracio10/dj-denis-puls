@@ -5,7 +5,7 @@
   .topbar .brand::after{content:"Agenciado Moving Eventos";position:absolute;left:0;right:0;bottom:0;text-align:center;white-space:nowrap;color:#b7bab6;font-size:7.5px;font-weight:700;letter-spacing:.02em;line-height:1}
   .topbar nav{order:2;margin-left:auto}
   .topbar::after{content:none}
-  .topbar .btn.primary.small{order:3;margin-left:0!important;width:44px;min-width:44px;height:44px;padding:0;border:0;border-radius:0;background-color:transparent;background-image:url("/assets/whatsapp-real.webp");background-repeat:no-repeat;background-position:center;background-size:contain;box-shadow:none;font-size:0;color:transparent}
+  .topbar .btn.primary.small{order:3;margin-left:0!important;width:44px;min-width:44px;height:44px;padding:0;border:0;border-radius:50%;background-color:transparent;background-image:url("/icons/whatsapp-clean.svg");background-repeat:no-repeat;background-position:center;background-size:contain;box-shadow:none;font-size:0;color:transparent}
   .topbar .btn.primary.small span{display:none}
 }
 
@@ -20,7 +20,7 @@
   .topbar{gap:12px;position:relative}
   .topbar .brand{order:1}
   .topbar::after{content:"Agenciado Moving Eventos";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:max-content;text-align:center;white-space:nowrap;color:#f4f4f0;font-size:10px;font-weight:800;letter-spacing:.02em;line-height:1;opacity:.9;pointer-events:none}
-  .topbar .btn.primary.small{order:3;margin-left:auto!important;width:46px;min-width:46px;height:46px;padding:0;border:0;border-radius:0;background-color:transparent;background-image:url("/assets/whatsapp-real.webp");background-repeat:no-repeat;background-position:center;background-size:contain;box-shadow:none;font-size:0;color:transparent}
+  .topbar .btn.primary.small{order:3;margin-left:auto!important;width:46px;min-width:46px;height:46px;padding:0;border:0;border-radius:50%;background-color:transparent;background-image:url("/icons/whatsapp-clean.svg");background-repeat:no-repeat;background-position:center;background-size:contain;box-shadow:none;font-size:0;color:transparent}
   .topbar .btn.primary.small span{display:none}
 }
 
