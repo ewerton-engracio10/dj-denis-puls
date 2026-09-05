@@ -24,6 +24,10 @@
 
 /* Desktop: imagens limpas, alinhadas e sem vazamento entre cards. */
 @media (min-width: 981px) {
+  .shell {
+    width: min(1120px, 92vw);
+  }
+
   .services {
     align-items: start;
   }
