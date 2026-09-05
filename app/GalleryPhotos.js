@@ -13,9 +13,9 @@ export const gallerySprite = `data:image/webp;base64,${galleryPart01}${galleryPa
 
 const galleryPhotos = [
   { src: "/gallery/gallery-01.jpg", position: "center top", label: "DJ Denis Puls em apresentação" },
-  { src: "/gallery/gallery-02.jpg", position: "center top", label: "DJ Denis Puls em evento" },
+  { src: "/gallery/gallery-02.jpg", position: "center 56%", size: "95% auto", label: "DJ Denis Puls em evento" },
   { src: "/gallery/gallery-03.jpg", position: "center top", label: "DJ Denis Puls ao pôr do sol" },
-  { src: "/gallery/gallery-04.jpg", position: "center top", label: "DJ Denis Puls no palco" },
+  { src: "/gallery/gallery-04.jpg", position: "center 56%", size: "96% auto", label: "DJ Denis Puls no palco" },
   { src: "/gallery/gallery-05.jpg", position: "center top", label: "DJ Denis Puls em apresentação" },
   { src: "/gallery/gallery-06.jpg", position: "center top", label: "Retrato do DJ Denis Puls" },
   { src: "https://images.unsplash.com/photo-1774927062109-ec5dc79c7aa8?auto=format&fit=crop&w=1200&h=900&q=86", position: "center", label: "Celebração de casamento" },
@@ -35,9 +35,10 @@ export default function GalleryPhotos() {
           aria-label={photo.label}
           style={{
             backgroundImage: `url("${photo.src}")`,
-            backgroundSize: "cover",
+            backgroundSize: photo.size || "cover",
             backgroundPosition: photo.position,
             backgroundRepeat: "no-repeat",
+            backgroundColor: "#050505",
             aspectRatio: "4 / 3",
             overflow: "hidden",
           }}
